@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_NAME = "color-checker-service"
         RELEASE = "1.0.0"
-        DOCKER_USER = "ekelejay"
+        DOCKER_USER = "oredollar"
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
@@ -18,7 +18,7 @@ pipeline {
         
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/ekelejames/color-checker-service.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/oredollars/color-checker-service.git'
             }
         }
         
