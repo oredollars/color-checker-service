@@ -43,6 +43,15 @@ pipeline {
             }
         }
 
+        stage('Trigger Manifest Update') {
+            steps{
+                script{
+                    echo "triggering kubernetes-deployment job"
+                    build job: 'color-checker-k8s-files-update', parameters: [string(name: 'DOCKER_TAG', value: env.IMAGE_TAG)]
+                }
+            }
+        }
+
     }
     
     post {
