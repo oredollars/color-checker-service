@@ -43,7 +43,7 @@ pipeline {
             }
         }
 
-  stage('Trigger Manifest Update') {
+stage('Trigger Manifest Update') {
     steps {
         script {
             echo 'triggering kubernetes-deployment job'
@@ -51,6 +51,10 @@ pipeline {
             build job: 'color-checker-k8s-update',
             parameters: [
                 string(name: 'DOCKER_TAG', value: "${DOCKER_TAG}")
+            ]
+        }
+    }
+}
             ]
         }
     }
