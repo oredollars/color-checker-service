@@ -47,7 +47,7 @@ pipeline {
             steps{
                 script{
                     echo "triggering kubernetes-deployment job"
-                    build job: 'practice', parameters: [string(name: 'DOCKER_TAG', value: env.IMAGE_TAG)]
+                    build job: 'color-checker-k8s-update', parameters: [string(name: 'DOCKER_TAG', value: env.IMAGE_TAG)]
                 }
             }
         }
